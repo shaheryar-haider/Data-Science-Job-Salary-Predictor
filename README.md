@@ -1,6 +1,5 @@
 # Data-Science-Job-Salary-Predictor
 
-# Data Science Salary Predictor 💵
 
 A machine learning web application that predicts salaries for data science roles in the **US and Canada** market. Built with a Ridge Regression model trained on historical compensation data and deployed as an interactive Streamlit app.
 
@@ -27,13 +26,28 @@ Salary expectations in data science vary widely based on job title, experience, 
 | Metric | Value |
 |---|---|
 | Model | Ridge Regression |
-| R² Score | 0.3653 |
-| RMSE | ~$54,000 |
-| MAE | ~$35,876 |
+| R² Score | 0.376 |
+| RMSE | $46,281 |
+| MAE | $35,641 |
 | Training Samples | US/CA filtered subset |
 | Features | 31 engineered features |
 
 > **Note:** The relatively low R² reflects structural limitations in the dataset — it lacks direct signals like years of experience, individual skills, or education level, which are the primary salary drivers. The project prioritizes building a complete, production-ready ML pipeline over raw predictive accuracy.
+
+**Residual Analysis:**
+| Stat | Value |
+|---|---|
+| Mean Residual | -$5,121 (close to 0, indicates low bias) |
+| Std Deviation | $46,212 |
+| Largest Underprediction | -$124,508 |
+| Largest Overprediction | +$163,187 |
+
+**Example Predictions:**
+
+| Profile | Predicted | Range |
+|---|---|---|
+| Entry-Level Data Analyst, Small Co., US, Onsite | $57,000 | $21,000 – $93,000 |
+| Mid-Level Data Scientist, Medium Co., Canada, Remote | $110,000 | $74,000 – $146,000 |
 
 ---
 
@@ -124,10 +138,11 @@ streamlit run app.py
 
 ## Limitations
 
-- R² of 0.37 means the model explains ~37% of salary variance — the dataset lacks key salary drivers (years of experience, skills, education)
+- R² of 0.376 means the model explains ~38% of salary variance — the dataset lacks key salary drivers (years of experience, skills, education)
 - Predictions are based on historical data and may not reflect current market conditions
 - Scoped to US and Canada only
-- Average prediction error of ~$35,876 — use the confidence range, not the point estimate alone
+- Average prediction error of ~$35,641 — use the confidence range, not the point estimate alone
+- Data covers 2020–2022; does not account for inflation, economic cycles, or recent market shifts
 
 ---
 
