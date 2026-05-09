@@ -1,0 +1,46 @@
+{
+    "samples": [
+        {
+            "id": 1,
+            "description": "Entry-Level Data Analyst",
+            "raw_input": {
+                "experience_level": "EN",
+                "employment_type": "FT",
+                "job_title": "Data Analyst",
+                "company_size": "S",
+                "employee_residence": "US",
+                "remote_ratio": 0,
+                "work_year": 2024
+            },
+            "expected_salary_range": "60000-80000"
+        },
+        {
+            "id": 2,
+            "description": "Senior Data Scientist",
+            "raw_input": {
+                "experience_level": "SE",
+                "employment_type": "FT",
+                "job_title": "Senior Data Scientist",
+                "company_size": "L",
+                "employee_residence": "US",
+                "remote_ratio": 100,
+                "work_year": 2024
+            },
+            "expected_salary_range": "150000-180000"
+        },
+        {
+            "id": 3,
+            "description": "Mid-Level Data Engineer",
+            "raw_input": {
+                "experience_level": "MI",
+                "employment_type": "FT",
+                "job_title": "Data Engineer",
+                "company_size": "M",
+                "employee_residence": "CA",
+                "remote_ratio": 50,
+                "work_year": 2024
+            },
+            "expected_salary_range": "100000-130000"
+        }
+    ]
+}

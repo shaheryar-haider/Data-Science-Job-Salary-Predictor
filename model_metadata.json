@@ -1,0 +1,50 @@
+{
+    "model_type": "Ridge Regression",
+    "target_variable": "salary_in_usd",
+    "n_features": 31,
+    "feature_names": [
+        "remote_ratio",
+        "is_entry_level",
+        "is_mid_level",
+        "is_senior_level",
+        "is_executive_level",
+        "experience_level_ordinal",
+        "is_full_time",
+        "is_part_time",
+        "is_contract",
+        "is_freelance",
+        "is_fully_remote",
+        "is_hybrid",
+        "is_onsite",
+        "remote_ratio_normalized",
+        "is_small_company",
+        "is_medium_company",
+        "is_large_company",
+        "company_size_ordinal",
+        "is_us_based",
+        "is_canada_based",
+        "is_data_scientist",
+        "is_data_engineer",
+        "is_data_analyst",
+        "is_ml_engineer",
+        "is_manager",
+        "title_has_senior",
+        "title_has_junior",
+        "title_has_lead",
+        "exp_company_interaction",
+        "exp_remote_interaction",
+        "senior_large_company"
+    ],
+    "model_performance": {
+        "test_r2": 0.3761506962584452,
+        "test_rmse": 46281.60789582162,
+        "test_mae": 35641.93833927421
+    },
+    "training_date": "2025-12-21 17:57:46",
+    "training_samples": 360,
+    "best_parameters": {
+        "alpha": 100
+    },
+    "currency": "USD",
+    "market": "US/Canada"
+}

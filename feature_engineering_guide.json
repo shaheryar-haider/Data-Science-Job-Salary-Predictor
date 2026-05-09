@@ -1,0 +1,110 @@
+{
+    "raw_inputs_needed": [
+        "experience_level",
+        "employment_type",
+        "job_title",
+        "company_size",
+        "employee_residence",
+        "remote_ratio",
+        "work_year"
+    ],
+    "feature_engineering_steps": {
+        "1_experience_level": {
+            "binary": [
+                "is_entry_level",
+                "is_mid_level",
+                "is_senior_level",
+                "is_executive_level"
+            ],
+            "ordinal": "experience_level_ordinal (EN=1, MI=2, SE=3, EX=4)"
+        },
+        "2_employment_type": {
+            "binary": [
+                "is_full_time",
+                "is_part_time",
+                "is_contract",
+                "is_freelance"
+            ]
+        },
+        "3_remote_work": {
+            "binary": [
+                "is_fully_remote",
+                "is_hybrid",
+                "is_onsite"
+            ],
+            "normalized": "remote_ratio_normalized (divide by 100)"
+        },
+        "4_company_size": {
+            "binary": [
+                "is_small_company",
+                "is_medium_company",
+                "is_large_company"
+            ],
+            "ordinal": "company_size_ordinal (S=1, M=2, L=3)"
+        },
+        "5_location": {
+            "binary": [
+                "is_us_based",
+                "is_canada_based"
+            ]
+        },
+        "6_job_title": {
+            "text_extraction": [
+                "is_data_scientist (contains \"data scientist\")",
+                "is_data_engineer (contains \"data engineer\")",
+                "is_data_analyst (contains \"data analyst\" or \"analyst\")",
+                "is_ml_engineer (contains \"machine learning\" or \"ml engineer\")",
+                "is_manager (contains \"manager\", \"lead\", \"head\", or \"director\")",
+                "title_has_senior (contains \"senior\" or \"sr\")",
+                "title_has_junior (contains \"junior\" or \"jr\")",
+                "title_has_lead (contains \"lead\", \"principal\", or \"staff\")"
+            ]
+        },
+        "7_temporal": {
+            "derived": [
+                "years_since_start (work_year - min_year)",
+                "is_recent_year (1 if within last 2 years)"
+            ]
+        },
+        "8_interactions": {
+            "multiplications": [
+                "exp_company_interaction (experience_ordinal \u00d7 company_size_ordinal)",
+                "exp_remote_interaction (experience_ordinal \u00d7 remote_ratio_normalized)",
+                "senior_large_company (is_senior_level \u00d7 is_large_company)"
+            ]
+        }
+    },
+    "all_features_must_match": [
+        "remote_ratio",
+        "is_entry_level",
+        "is_mid_level",
+        "is_senior_level",
+        "is_executive_level",
+        "experience_level_ordinal",
+        "is_full_time",
+        "is_part_time",
+        "is_contract",
+        "is_freelance",
+        "is_fully_remote",
+        "is_hybrid",
+        "is_onsite",
+        "remote_ratio_normalized",
+        "is_small_company",
+        "is_medium_company",
+        "is_large_company",
+        "company_size_ordinal",
+        "is_us_based",
+        "is_canada_based",
+        "is_data_scientist",
+        "is_data_engineer",
+        "is_data_analyst",
+        "is_ml_engineer",
+        "is_manager",
+        "title_has_senior",
+        "title_has_junior",
+        "title_has_lead",
+        "exp_company_interaction",
+        "exp_remote_interaction",
+        "senior_large_company"
+    ]
+}
